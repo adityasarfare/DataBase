@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	/*   background-color: black;
+ */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+	padding: 16px;
+	background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+	background-color: #04AA6D;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+.registerbtn:hover {
+	opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+	color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+	background-color: #f1f1f1;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form th:action="@{/api/v1/laboratorys}"  method="POST"><div class="container">
+			<h1>Add Laboratory Details</h1>
+			<hr>
+
+			<label for="labNumber"><b>LabNumber</b></label> 
+			<input type="text" placeholder="Enter labNumber" th:name="labNumber" th:value="${data.labNumber}"  required> 
+			
+			<label for="labNumber"><b>date</b></label> 
+			<input type="text" th:value="${data.date}"placeholder="Enter date..." th:name="date"   autocomplete="off" required>
+
+		    <label for="labNumber"><b>Amount</b></label> 
+			<input type="text" th:value="${data.amount}"placeholder="Enter amount..." th:name="amount"  autocomplete="off" required>
+
+			<label for="labNumber"><b>patientId</b></label> 
+			<input type="text" th:value="${data.patientId}"placeholder="Enter patientId..." th:name="patientId"   autocomplete="off" required>
+
+			<label for="labNumber"><b>doctorId</b></label> 
+			<input type="text" th:value="${data.doctorId}"placeholder="Enter doctorId..." th:name="doctorIds"   autocomplete="off" required>
+
+			
+			
+			<!-- <select id="des" th:name="Designation"  th:value="${data.designation}" style="height: 50px">
+				<option value="Software Engineer"><b>Software Engineer</b></option>
+				<option value="Project Manager"><b>Project Manager</b></option>
+				<option value="OPERATION ENGINEER"><b>OPERATION
+						ENGINEER</b></option>
+				<option value="HR"><b>HR</b></option>
+				<option value="NETWORK ENGINEER"><b>NETWORK ENGINEER</b></option>
+
+			</select> <br> <br> <label for="city"><b>Select City</b> </label>&nbsp
+			<select id="des" th:name="city" th:value="${data.address}"  style="height: 50px">
+				<option value="PUNE"><b>PUNE</b></option>
+				<option value="DELHI"><b>DELHI</b></option>
+				<option value="MUMBAI"><b>MUMBAI</b></option>
+				<option value="CHENNAI"><b>CHENNAI</b></option>
+				<option value="BENGLURU"><b>BENGLURU</b></option>
+
+			</select> --> <br> <br>
+
+				
+			<button type="submit" class="registerbtn" onclick="myFunction()">Update</button>
+		</div>
+
+
+	</form>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
